@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>XOWA</Name>
+  <Beta>False</Beta>
+  <Project>http://xowa.org/</Project>
+  <Changes>
+[center][img width='300px' src='https://gnosygnu.github.io/xowa/xowa_logo.png'][/center]
+ 
+[center][font size=5]Xowa Change Log[/font][/center]
+[font size=4]2018.09.23[/font]
+</Changes>
+<Category>Database</Category>
+  <Description>XOWA is the free, open-source application that lets you download Wikipedia to your computer. Access all of Wikipedia offline -- without an internet connection!</Description>
+  <Support>https://github.com/veizour</Support>
+  <Overview>XOWA: the free, open-source, offline wiki application.</Overview>
+  <Registry>https://registry.hub.docker.com/u/veizour/xowa/</Registry>
+  <Repository>veizour/xowa</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+<Variable>
+<Name>WIDTH</Name>
+<Value>1280</Value>
+</Variable>
+<Variable>
+<Name>HEIGHT</Name>
+<Value>720</Value>
+</Variable>
+</Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    
+      <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/xowa/wiki</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+        <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/nobody/.config/xowa</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Banner></Banner>
+  <Icon>https://gnosygnu.github.io/xowa/xowa_logo.png</Icon>
+</Container>
